@@ -52,5 +52,16 @@ public class Smell1AlmostBestTest {
     void testNegativeBaseOddPow() {
         assertEquals(-8, Smell1AlmostBest.toPower(-2, 3));
     }
+// Additional Test cases for an attempt to increase coverage
+    @Test
+    void testMainWithValidArguments() {
+        String[] args = {"54", "13", "34"};
+        Smell1AlmostBest.main(args); 
+    }
 
+    @Test
+    void testMainWithInvalidArguments() {
+        String[] args = {"54", "thirteen"};
+        assertThrows(NumberFormatException.class, () -> Smell1AlmostBest.main(args));
+    }
 }
